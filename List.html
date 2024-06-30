@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <div>
+        <!-- Modal de Edição -->
+        <div id="editModal" onclick="closeEditModal()" style="display: none; position: fixed; top: 0; left: 0; bottom: 0; right: 0; place-items: center; z-index: 2; background-color: rgba(0, 0, 0, 0.50);">
+            <div id="editModalContent" style="z-index: 10;">
+                <h2>Editar Tarefa</h2>
+                <input type="text" id="editTaskInput" placeholder="Editar tarefa" onclick="event.stopPropagation();">
+                <button onclick="saveEditedTask()">Salvar</button>
+                <button onclick="closeEditModal()">Cancelar</button>
+            </div>
+        </div>
+
+        <div style="z-index: 1;">
+            <h1>Lista de Tarefas Compartilhada</h1>
+            <input type="text" id="taskInput" placeholder="Escreva uma nova tarefa">
+            <button onclick="addTask()">Adicionar Tarefa</button>
+            <ul id="taskList"></ul>
+        </div>
+    </div>
+
+    <script src="List.js"></script>
+</body>
+</html>
